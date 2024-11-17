@@ -21,13 +21,12 @@ public enum CreditLimitEnquiryErrorEnum {
 	private String errorMsg;
 	private String errorType;
 
-	CreditLimitEnquiryErrorEnum(String errorCode, String errorMsg, String errorType) {
 
+	private CreditLimitEnquiryErrorEnum(String errorCode, String errorMsg, String errorType) {
 		this.errorCode = errorCode;
 		this.errorMsg = errorMsg;
 		this.errorType = errorType;
 	}
-	  
 
 	public String getErrorCode() {
 		return errorCode;
