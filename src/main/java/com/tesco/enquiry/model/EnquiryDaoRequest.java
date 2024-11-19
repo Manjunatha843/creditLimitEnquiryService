@@ -9,16 +9,14 @@ package com.tesco.enquiry.model;
  *
  */
 public class EnquiryDaoRequest {
-	private String promocode;
+	private String promoCode;
 	private  String clientId;
 	private  String channelId;
-	private String messageTs;
-	private String requestId;
-	public String getPromocode() {
-		return promocode;
+	public String getPromoCode() {
+		return promoCode;
 	}
-	public void setPromocode(String promocode) {
-		this.promocode = promocode;
+	public void setPromoCode(String promoCode) {
+		this.promoCode = promoCode;
 	}
 	public String getClientId() {
 		return clientId;
@@ -32,17 +30,12 @@ public class EnquiryDaoRequest {
 	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 	}
-	public String getMessageTs() {
-		return messageTs;
+	@Override
+	public String toString() {
+		return "EnquiryDaoRequest [promoCode=" + promoCode + ", clientId=" + clientId + ", channelId=" + channelId
+				+ "]";
 	}
-	public void setMessageTs(String messageTs) {
-		this.messageTs = messageTs;
-	}
-	public String getRequestId() {
-		return requestId;
-	}
-	public void setRequestId(String requestId) {
-		this.requestId = requestId;
-	}
+	
+	
 	
 }

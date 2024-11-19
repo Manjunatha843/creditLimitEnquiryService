@@ -32,9 +32,14 @@ public class CreditLimitEnquiryServiceImpl implements ICreditLimitEnquiryService
  //6.prepare the request dao integration layer
 //7.call dao integration layer and get response
 		EnquiryDaoRequest enquiryDaoRequest=new EnquiryDaoRequest();
+		enquiryDaoRequest.setClientId(creditLimitRequest.getClientId());
+		enquiryDaoRequest.setChannelId(creditLimitRequest.getChannelId());
+		enquiryDaoRequest.setPromoCode(creditLimitRequest.getPromocode());
+		
 		EnquiryDaoResponse daoResp=creditLimitDao.enquiry(enquiryDaoRequest);
 		//prepare the service response
 		EnquiryResponse enquiryResponse=new EnquiryResponse(); 
+		
 		
 		StatusBlock statusBlock=new StatusBlock();
 		
@@ -44,7 +49,7 @@ public class CreditLimitEnquiryServiceImpl implements ICreditLimitEnquiryService
 		CustomerInfo customerInfo=new CustomerInfo();
 		
 		customerInfo.setAvailableAmount(daoResp.getAvailableAmount());
-		customerInfo.setCardNum(daoResp.getCardNum());
+		customerInfo.setCardNum(daoResp.getCardnum());
 		customerInfo.setCvv(daoResp.getCvv());
 		customerInfo.setIncreaseAmount(daoResp.getIncreaseAmount());
 		customerInfo.setIncreasePer(daoResp.getIncreasePer());

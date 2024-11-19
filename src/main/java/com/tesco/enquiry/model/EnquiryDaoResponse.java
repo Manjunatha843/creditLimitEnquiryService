@@ -24,16 +24,20 @@ public class EnquiryDaoResponse {
 	public void setRespMsg(String respMsg) {
 		this.respMsg = respMsg;
 	}
-	private String cardNum;
+	private String cardnum;
 	private String cvv;
+	private String expdate;
+	private String nameoncard;
 	private long availableAmount;
 	private long increaseAmount;
 	private float increasePer;
-	public String getCardNum() {
-		return cardNum;
+
+	
+	public String getCardnum() {
+		return cardnum;
 	}
-	public void setCardNum(String cardNum) {
-		this.cardNum = cardNum;
+	public void setCardnum(String cardnum) {
+		this.cardnum = cardnum;
 	}
 	public String getCvv() {
 		return cvv;
@@ -41,8 +45,18 @@ public class EnquiryDaoResponse {
 	public void setCvv(String cvv) {
 		this.cvv = cvv;
 	}
-
-	
+	public String getExpdate() {
+		return expdate;
+	}
+	public void setExpdate(String expdate) {
+		this.expdate = expdate;
+	}
+	public String getNameoncard() {
+		return nameoncard;
+	}
+	public void setNameoncard(String nameoncard) {
+		this.nameoncard = nameoncard;
+	}
 	public long getAvailableAmount() {
 		return availableAmount;
 	}
@@ -61,5 +75,6 @@ public class EnquiryDaoResponse {
 	public void setIncreasePer(float increasePer) {
 		this.increasePer = increasePer;
 	}
+	
 	
 }
