@@ -9,9 +9,10 @@ package com.tesco.enquiry.model;
  *
  */
 public class EnquiryDaoRequest {
-	private String promoCode;
+	
 	private  String clientId;
 	private  String channelId;
+	private String promoCode;
 	public String getPromoCode() {
 		return promoCode;
 	}

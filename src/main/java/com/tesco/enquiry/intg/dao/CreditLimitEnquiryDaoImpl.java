@@ -23,9 +23,9 @@ import com.tesco.enquiry.util.CreditLimitEnquiryErrorEnum;
  *
  */
 @Component
-public class CreditLimitEnquiryDaoImpl implements ICreditLimitEnquiryDao {
-
-	@Override
+public class CreditLimitEnquiryDaoImpl /**implements ICreditLimitEnquiryDao*/ {
+   /***
+	//@Override
 	public EnquiryDaoResponse enquiry(EnquiryDaoRequest enquiryDaoRequest) throws BusinessException, SystemException {
 		System.out.println("entered into Dao");
 		// 8.get the request from service layer
@@ -36,8 +36,9 @@ public class CreditLimitEnquiryDaoImpl implements ICreditLimitEnquiryDao {
 		try {
 			System.out.println("entered int try");
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/clep", "root", "Manju@123");
-			String sql ="CALL clep.enquire_v001(?,?,?,?,?)";
+			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/clep", "root",
+					"Manju@123");
+			String sql = "CALL clep.enquire_v001(?,?,?,?,?)";
 			CallableStatement cs = connection.prepareCall(sql);
 			cs.setString(1, enquiryDaoRequest.getClientId());
 			cs.setString(2, enquiryDaoRequest.getChannelId());
@@ -45,12 +46,12 @@ public class CreditLimitEnquiryDaoImpl implements ICreditLimitEnquiryDao {
 			cs.registerOutParameter(4, Types.VARCHAR);
 			cs.registerOutParameter(5, Types.VARCHAR);
 
-			//cs.executeQuery();
+			// cs.executeQuery();
 			ResultSet rs = cs.executeQuery();
 			String dbRespCode = cs.getString(4);
 			String dbRespMsg = cs.getString(5);
 			System.out.println("dbRespCode:" + dbRespCode + "dbRespMsg:" + dbRespMsg);
-System.out.println(rs);
+			System.out.println(rs);
 			if (CreditLimitEnquiryConstant.ZERO.equals(dbRespCode)) {
 				enquiryDaoResponse = new EnquiryDaoResponse();
 				System.out.println("is it entering");
@@ -81,10 +82,9 @@ System.out.println(rs);
 			e.printStackTrace();
 			throw new SystemException("8888", "unknown error fron Database");
 		}
-		
+
 		System.out.println("exit from Dao");
 		return enquiryDaoResponse;
 	}
-	
-
+*/
 }
