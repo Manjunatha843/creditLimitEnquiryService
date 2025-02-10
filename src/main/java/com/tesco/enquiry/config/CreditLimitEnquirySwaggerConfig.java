@@ -4,6 +4,7 @@
 package com.tesco.enquiry.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -18,7 +19,7 @@ import springfox.documentation.spring.web.plugins.Docket;
  * Description:this class will be used
  *
  */
-
+@Configuration
 public class CreditLimitEnquirySwaggerConfig {
 	@Bean
     public Docket api() {

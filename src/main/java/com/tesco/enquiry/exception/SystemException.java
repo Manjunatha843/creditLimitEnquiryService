@@ -9,6 +9,8 @@ package com.tesco.enquiry.exception;
  *
  */
 public class SystemException extends Exception {
+	//solution for above error
+	//private static final long serialVersionUID = 1L;
 	private String respCode;
 	private String respMsg;
 	
